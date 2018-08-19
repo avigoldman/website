@@ -1,9 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Avi Goldman',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx', '.md']
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/src/posts/`
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
